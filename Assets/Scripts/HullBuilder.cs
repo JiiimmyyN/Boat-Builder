@@ -4,13 +4,7 @@ using UnityEngine;
 using UnityEngine.Assertions;
 using System.Linq;
 
-[CreateAssetMenu(fileName = "HullPieces",menuName = "Boat Builder/HullPieces", order = 0)]
-public class HullPieces : ScriptableObject
-{
-	public List<GameObject> Bows;
-	public List<GameObject> Centers;
-	public List<GameObject> Sterns;
-}
+
 
 public class HullBuilder : MonoBehaviour
 {
