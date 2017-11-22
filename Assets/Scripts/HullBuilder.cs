@@ -50,25 +50,6 @@ public class HullBuilder : MonoBehaviour
 
 		Connect(bow, center);
 		Connect(center, stern);
-
-		//var bowConnector = bow.GetComponentInChildren<Connector>();
-		//var centerConnector = center.GetComponentsInChildren<Connector>();
-		//var sternConnector = stern.GetComponentInChildren<Connector>();
-
-		//var bowPos = bowConnector.transform.position;
-		//var sternPos = sternConnector.transform.position;
-
-		//for(int i = 0; i < centerConnector.Length; i++)
-		//{
-		//	if(centerConnector[i].Pos == Connector.Position.Front)
-		//	{
-		//		center.transform.Translate(bowPos - centerConnector[i].transform.position);
-		//	}
-		//	if(centerConnector[i].Pos == Connector.Position.Back)
-		//	{
-		//		stern.transform.Translate(centerConnector[i].transform.position - sternPos);
-		//	}
-		//}
 	}
 
 	public void AddCenterPiece(GameObject centerPiece)
