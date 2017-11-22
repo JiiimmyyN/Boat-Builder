@@ -10,9 +10,9 @@ FBXHeaderExtension:  {
 		Month: 11
 		Day: 22
 		Hour: 18
-		Minute: 9
-		Second: 43
-		Millisecond: 693
+		Minute: 53
+		Second: 46
+		Millisecond: 432
 	}
 	Creator: "FBX SDK/FBX Plugins version 2018.1.1"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -34,13 +34,13 @@ FBXHeaderExtension:  {
 			P: "Original|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "Original|ApplicationName", "KString", "", "", "Maya LT"
 			P: "Original|ApplicationVersion", "KString", "", "", "201801"
-			P: "Original|DateTime_GMT", "DateTime", "", "", "22/11/2017 17:09:43.690"
+			P: "Original|DateTime_GMT", "DateTime", "", "", "22/11/2017 17:53:46.429"
 			P: "Original|FileName", "KString", "", "", "C:\Users\josef_000\Documents\GitHub\Boat-Builder\Assets\Graphics\Boats\boat_G_bow.fbx"
 			P: "LastSaved", "Compound", "", ""
 			P: "LastSaved|ApplicationVendor", "KString", "", "", "Autodesk"
 			P: "LastSaved|ApplicationName", "KString", "", "", "Maya LT"
 			P: "LastSaved|ApplicationVersion", "KString", "", "", "201801"
-			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "22/11/2017 17:09:43.690"
+			P: "LastSaved|DateTime_GMT", "DateTime", "", "", "22/11/2017 17:53:46.429"
 			P: "Original|ApplicationActiveProject", "KString", "", "", "C:\Users\josef_000\Documents\GitHub\Boat-Builder\Assets\Graphics\Boats"
 			P: "Original|ApplicationNativeFile", "KString", "", "", "C:\Users\josef_000\Google Drive\3D\sketches and ideas\art style\huge_ship_modules_02.mlt"
 		}
@@ -77,7 +77,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 1976638445232, "", "Scene" {
+	Document: 1976239351472, "", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", "Take 001"
@@ -296,7 +296,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	Geometry: 1976911403808, "Geometry::", "Mesh" {
+	Geometry: 1976911501600, "Geometry::", "Mesh" {
 		Vertices: *1725 {
 			a: -105.695274353027,96.2611465454102,-400.020874023438,-500,750,-400.020874023438,0,0,-400.020874023438,-349.396026611328,201.422668457031,-400.020874023438,-479.953674316406,400,-400.020874023438,-132.202926635742,42.9320526123047,-400.020874023438,-248.266296386719,141.95947265625,-400.020874023438,-427.600524902344,289.325775146484,-400.020874023438,-114.50904083252,42.9320526123047,254.264892578125,0,-57.266918182373,254.264770507813,0,157.875747680664,254.264892578125,-132.202926635742,42.9320526123047,-225.020874023438,-105.695343017578,96.2611465454102,-225.020874023438,-237.929672241211,138.646255493164,-225.020874023438,-349.396179199219,201.422668457031,-225.020874023438,-427.600646972656,289.325775146484,-225.020874023438,-479.953857421875,400,-225.020874023438,-500,750,-225.020874023438,0,-12.5070610046387,-225.020874023438,0,-38.7475547790527,55.96044921875,-31.4985046386719,144.047302246094,40.2619018554688,-33.576530456543,178.028884887695,56.799072265625,-98.6513900756836,232.700454711914,75.4783706665039,-261.723754882813,314.848205566406,46.9683227539063,-293.811584472656,420.471527099609,68.1304321289063,-327.644683837891,750,119.488708496094,-131.925582885742,324.671630859375,135.432861328125,-150.926620483398,428.310821533203,179.810974121094,-183.735046386719,750,279.824462890625,0,-23.69704246521,-105.199340820313,-127.779457092285,42.9320526123047,-105.199340820313,-93.1120986938477,100.2783203125,-105.199340820313,-188.969924926758,151.003448486328,-106.692138671875,-286.149749755859,210.920349121094,-90.9749755859375,-354.085968017578,301.186004638672,-74.16064453125,-392.149597167969,410.235778808594,-63.7101440429688,-433.648040771484,750,-45.570068359375,0,428.876312255859,230.923278808594,-21.1369552612305,428.510528564453,226.784362792969,0,288.094055175781,119.851257324219,-21.1369552612305,287.354766845703,118.436767578125,-21.1369495391846,198.944061279297,111.311889648438,0,197.621734619141,111.7822265625,0,750,400.020874023438,-21.1369552612305,750,392.217529296875,
 0,332.083526611328,160.374633789063,-21.1369552612305,331.427124023438,157.404602050781,-21.5244026184082,150.723785400391,134.785461425781,0,152.305191040039,135.118774414063,-39.5774879455566,146.654647827148,254.264892578125,-56.3193855285645,120.256866455078,6.25885009765625,-141.542938232422,161.499816894531,-27.392333984375,-207.890029907227,228.336761474609,12.406005859375,-79.9722671508789,169.289947509766,35.531867980957,-56.5178871154785,-37.227123260498,254.264770507813,-49.538143157959,-10.371223449707,-105.199340820313,-59.2045059204102,12.3202466964722,-225.020874023438,-66.1014633178711,21.4660263061523,-400.020874023438,0,10.1360387802124,320.638061523438,-31.1605834960938,12.0192155838013,321.133544921875,-101.059432983398,-1.08917140960693,254.264770507813,-88.6587982177734,16.2804145812988,-105.199340820313,0,-52.2756690979004,277.320068359375,-52.6059875488281,-36.4647178649902,279.224487304688,-92.2334289550781,-5.5681414604187,283.693969726563,-100.768920898438,38.892219543457,289.460205078125,-33.2380332946777,118.326072692871,301.40625,0,127.764930725098,302.89306640625,-76.5235366821289,106.747062683105,-43.8563232421875,-125.234436035156,42.9320526123047,-36.2608642578125,-97.3132171630859,11.2994937896729,-31.6043701171875,-53.8989410400391,-16.4653568267822,-25.98681640625,0,-31.222297668457,-24.6195068359375,-121.871376037598,42.9320526123047,54.8366088867188,-105.668403625488,5.86694478988647,54.9326782226563,-58.12109375,-22.7090110778809,55.3778076171875,-123.402694702148,42.9320526123047,13.3567504882813,-103.100067138672,7.96896600723267,17.6056518554688,-56.3307266235352,-19.8637428283691,18.18603515625,0,-34.9849243164063,15.6705932617188,0,-49.7403106689453,173.670288085938,-57.1675491333008,-31.3439903259277,173.67041015625,-102.922950744629,1.72334599494934,173.670166015625,-117.484352111816,42.9320526123047,173.670776367188,-27.4041976928711,149.398483276367,173.699340820313,0,154.123062133789,174.000427246094,-90.7530288696289,97.3437271118164,-42.7371826171875,-95.6504058837891,83.3607559204102,8.20452880859375,
@@ -448,11 +448,9 @@ Objects:  {
 			}
 		}
 	}
-	Model: 1976402320240, "Model::boat_G_bow", "Mesh" {
+	Model: 1976468096592, "Model::boat_G_bow", "Mesh" {
 		Version: 232
 		Properties70:  {
-			P: "RotationPivot", "Vector3D", "Vector", "",0,348.191492080688,0
-			P: "ScalingPivot", "Vector3D", "Vector", "",0,348.191492080688,0
 			P: "RotationActive", "bool", "", "",1
 			P: "InheritType", "enum", "", "",1
 			P: "ScalingMax", "Vector3D", "Vector", "",0,0,0
@@ -462,7 +460,7 @@ Objects:  {
 		Shading: T
 		Culling: "CullingOff"
 	}
-	Material: 1977083190928, "Material::m_boat_g_hull", "" {
+	Material: 1976352082432, "Material::m_boat_g_hull", "" {
 		Version: 102
 		ShadingModel: "unknown"
 		MultiLayer: 0
@@ -493,7 +491,7 @@ Objects:  {
 			P: "Maya|TEX_ao_map", "Vector3D", "Vector", "",0,0,0
 		}
 	}
-	Material: 1977083192528, "Material::m_boat_G_deck", "" {
+	Material: 1976352080352, "Material::m_boat_G_deck", "" {
 		Version: 102
 		ShadingModel: "unknown"
 		MultiLayer: 0
@@ -524,7 +522,7 @@ Objects:  {
 			P: "Maya|TEX_ao_map", "Vector3D", "Vector", "",0,0,0
 		}
 	}
-	Video: 1975855667056, "Video::file8", "Clip" {
+	Video: 1976993316400, "Video::file8", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_metallic.tiff"
@@ -534,7 +532,7 @@ Objects:  {
 		Filename: "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_metallic.tiff"
 		RelativeFilename: "..\..\..\..\..\..\Downloads\TexturesCom_BronzePatina_1024_metallic.tiff"
 	}
-	Video: 1975855667536, "Video::file2", "Clip" {
+	Video: 1976993309200, "Video::file2", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Program Files/Autodesk/MayaLT2018/presets/ShaderFX/Images/PBS/midday/specular_cube.dds"
@@ -544,7 +542,7 @@ Objects:  {
 		Filename: "C:/Program Files/Autodesk/MayaLT2018/presets/ShaderFX/Images/PBS/midday/specular_cube.dds"
 		RelativeFilename: "..\..\..\..\..\..\..\..\Program Files\Autodesk\MayaLT2018\presets\ShaderFX\Images\PBS\midday\specular_cube.dds"
 	}
-	Video: 1975855652656, "Video::file1", "Clip" {
+	Video: 1976993314000, "Video::file1", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Program Files/Autodesk/MayaLT2018/presets/ShaderFX/Images/PBS/midday/diffuse_cube.dds"
@@ -554,7 +552,7 @@ Objects:  {
 		Filename: "C:/Program Files/Autodesk/MayaLT2018/presets/ShaderFX/Images/PBS/midday/diffuse_cube.dds"
 		RelativeFilename: "..\..\..\..\..\..\..\..\Program Files\Autodesk\MayaLT2018\presets\ShaderFX\Images\PBS\midday\diffuse_cube.dds"
 	}
-	Video: 1975855654576, "Video::file9", "Clip" {
+	Video: 1976993305840, "Video::file9", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_roughness.tiff"
@@ -564,7 +562,7 @@ Objects:  {
 		Filename: "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_roughness.tiff"
 		RelativeFilename: "..\..\..\..\..\..\Downloads\TexturesCom_BronzePatina_1024_roughness.tiff"
 	}
-	Video: 1975855655056, "Video::file3", "Clip" {
+	Video: 1976993296720, "Video::file3", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Program Files/Autodesk/MayaLT2018/presets/ShaderFX/Images/PBS/ibl_brdf_lut.dds"
@@ -574,7 +572,7 @@ Objects:  {
 		Filename: "C:/Program Files/Autodesk/MayaLT2018/presets/ShaderFX/Images/PBS/ibl_brdf_lut.dds"
 		RelativeFilename: "..\..\..\..\..\..\..\..\Program Files\Autodesk\MayaLT2018\presets\ShaderFX\Images\PBS\ibl_brdf_lut.dds"
 	}
-	Video: 1975855655536, "Video::file6", "Clip" {
+	Video: 1976993317360, "Video::file6", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_albedo.tiff"
@@ -584,7 +582,7 @@ Objects:  {
 		Filename: "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_albedo.tiff"
 		RelativeFilename: "..\..\..\..\..\..\Downloads\TexturesCom_BronzePatina_1024_albedo.tiff"
 	}
-	Video: 1975855656016, "Video::file7", "Clip" {
+	Video: 1976993297200, "Video::file7", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_normal.tiff"
@@ -594,7 +592,7 @@ Objects:  {
 		Filename: "C:/Users/josef_000/Downloads/TexturesCom_BronzePatina_1024_normal.tiff"
 		RelativeFilename: "..\..\..\..\..\..\Downloads\TexturesCom_BronzePatina_1024_normal.tiff"
 	}
-	Video: 1975855684336, "Video::file4", "Clip" {
+	Video: 1976993318320, "Video::file4", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Users/josef_000/Downloads/TexturesCom_CorrugatedPlates_1024_albedo.tiff"
@@ -604,7 +602,7 @@ Objects:  {
 		Filename: "C:/Users/josef_000/Downloads/TexturesCom_CorrugatedPlates_1024_albedo.tiff"
 		RelativeFilename: "..\..\..\..\..\..\Downloads\TexturesCom_CorrugatedPlates_1024_albedo.tiff"
 	}
-	Video: 1975855682416, "Video::file5", "Clip" {
+	Video: 1976993319280, "Video::file5", "Clip" {
 		Type: "Clip"
 		Properties70:  {
 			P: "Path", "KString", "XRefUrl", "", "C:/Users/josef_000/Downloads/TexturesCom_CorrugatedPlates_1024_normal.tiff"
@@ -614,7 +612,7 @@ Objects:  {
 		Filename: "C:/Users/josef_000/Downloads/TexturesCom_CorrugatedPlates_1024_normal.tiff"
 		RelativeFilename: "..\..\..\..\..\..\Downloads\TexturesCom_CorrugatedPlates_1024_normal.tiff"
 	}
-	Texture: 1975855666096, "Texture::file8", "" {
+	Texture: 1976993302000, "Texture::file8", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file8"
@@ -629,7 +627,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855677136, "Texture::file2", "" {
+	Texture: 1976993307760, "Texture::file2", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file2"
@@ -644,7 +642,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855677616, "Texture::file1", "" {
+	Texture: 1976993293360, "Texture::file1", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file1"
@@ -659,7 +657,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855680976, "Texture::file9", "" {
+	Texture: 1976993310160, "Texture::file9", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file9"
@@ -674,7 +672,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855658416, "Texture::file3", "" {
+	Texture: 1976993317840, "Texture::file3", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file3"
@@ -689,7 +687,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855664176, "Texture::file6", "" {
+	Texture: 1976993303440, "Texture::file6", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file6"
@@ -704,7 +702,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855665136, "Texture::file7", "" {
+	Texture: 1976993302960, "Texture::file7", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file7"
@@ -719,7 +717,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855666576, "Texture::file4", "" {
+	Texture: 1976993313520, "Texture::file4", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file4"
@@ -734,7 +732,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Texture: 1975855679536, "Texture::file5", "" {
+	Texture: 1976993322640, "Texture::file5", "" {
 		Type: "TextureVideoClip"
 		Version: 202
 		TextureName: "Texture::file5"
@@ -749,7 +747,7 @@ Objects:  {
 		Texture_Alpha_Source: "None"
 		Cropping: 0,0,0,0
 	}
-	Implementation: 1976938918592, "Implementation::m_boat_g_hull_Implementation", "" {
+	Implementation: 1976692124832, "Implementation::m_boat_g_hull_Implementation", "" {
 		Version: 100
 		Properties70:  {
 			P: "ShaderLanguage", "KString", "", "", "SFX"
@@ -773,7 +771,7 @@ Objects:  {
 			}
 		}
 	}
-	Implementation: 1976938919040, "Implementation::m_boat_G_deck_Implementation", "" {
+	Implementation: 1976692121696, "Implementation::m_boat_G_deck_Implementation", "" {
 		Version: 100
 		Properties70:  {
 			P: "ShaderLanguage", "KString", "", "", "SFX"
@@ -797,7 +795,7 @@ Objects:  {
 			}
 		}
 	}
-	BindingTable: 1976467235760, "BindingTable::root 36", "" {
+	BindingTable: 1976226578912, "BindingTable::root 50", "" {
 		Version: 100
 		Properties70:  {
 			P: "TargetName", "KString", "", "", "root"
@@ -826,7 +824,7 @@ Objects:  {
 		Entry: "Maya|TEX_color_map", "FbxPropertyEntry", "TEX_color_map", "FbxSemanticEntry"
 		Entry: "Maya|TEX_normal_map", "FbxPropertyEntry", "TEX_normal_map", "FbxSemanticEntry"
 	}
-	BindingTable: 1976467232880, "BindingTable::root 37", "" {
+	BindingTable: 1976226579776, "BindingTable::root 51", "" {
 		Version: 100
 		Properties70:  {
 			P: "TargetName", "KString", "", "", "root"
@@ -855,7 +853,7 @@ Objects:  {
 		Entry: "Maya|TEX_color_map", "FbxPropertyEntry", "TEX_color_map", "FbxSemanticEntry"
 		Entry: "Maya|TEX_normal_map", "FbxPropertyEntry", "TEX_normal_map", "FbxSemanticEntry"
 	}
-	CollectionExclusive: 1976319873552, "DisplayLayer::hull_pieces", "DisplayLayer" {
+	CollectionExclusive: 1976518846240, "DisplayLayer::hull_pieces", "DisplayLayer" {
 	}
 }
 
@@ -865,92 +863,92 @@ Objects:  {
 Connections:  {
 	
 	;Model::boat_G_bow, Model::RootNode
-	C: "OO",1976402320240,0
+	C: "OO",1976468096592,0
 	
 	;Texture::file1, Material::m_boat_g_hull
-	C: "OP",1975855677616,1977083190928, "Maya|TEX_global_diffuse_cube"
+	C: "OP",1976993293360,1976352082432, "Maya|TEX_global_diffuse_cube"
 	
 	;Texture::file2, Material::m_boat_g_hull
-	C: "OP",1975855677136,1977083190928, "Maya|TEX_global_specular_cube"
+	C: "OP",1976993307760,1976352082432, "Maya|TEX_global_specular_cube"
 	
 	;Texture::file3, Material::m_boat_g_hull
-	C: "OP",1975855658416,1977083190928, "Maya|TEX_brdf_lut"
+	C: "OP",1976993317840,1976352082432, "Maya|TEX_brdf_lut"
 	
 	;Texture::file7, Material::m_boat_g_hull
-	C: "OP",1975855665136,1977083190928, "Maya|TEX_normal_map"
+	C: "OP",1976993302960,1976352082432, "Maya|TEX_normal_map"
 	
 	;Texture::file6, Material::m_boat_g_hull
-	C: "OP",1975855664176,1977083190928, "Maya|TEX_color_map"
+	C: "OP",1976993303440,1976352082432, "Maya|TEX_color_map"
 	
 	;Texture::file8, Material::m_boat_g_hull
-	C: "OP",1975855666096,1977083190928, "Maya|TEX_metallic_map"
+	C: "OP",1976993302000,1976352082432, "Maya|TEX_metallic_map"
 	
 	;Texture::file9, Material::m_boat_g_hull
-	C: "OP",1975855680976,1977083190928, "Maya|TEX_roughness_map"
+	C: "OP",1976993310160,1976352082432, "Maya|TEX_roughness_map"
 	
 	;Material::m_boat_g_hull, Implementation::m_boat_g_hull_Implementation
-	C: "OO",1977083190928,1976938918592
+	C: "OO",1976352082432,1976692124832
 	
-	;BindingTable::root 36, Implementation::m_boat_g_hull_Implementation
-	C: "OO",1976467235760,1976938918592
+	;BindingTable::root 50, Implementation::m_boat_g_hull_Implementation
+	C: "OO",1976226578912,1976692124832
 	
 	;Video::file8, Texture::file8
-	C: "OO",1975855667056,1975855666096
+	C: "OO",1976993316400,1976993302000
 	
 	;Video::file2, Texture::file2
-	C: "OO",1975855667536,1975855677136
+	C: "OO",1976993309200,1976993307760
 	
 	;Video::file1, Texture::file1
-	C: "OO",1975855652656,1975855677616
+	C: "OO",1976993314000,1976993293360
 	
 	;Video::file9, Texture::file9
-	C: "OO",1975855654576,1975855680976
+	C: "OO",1976993305840,1976993310160
 	
 	;Video::file3, Texture::file3
-	C: "OO",1975855655056,1975855658416
+	C: "OO",1976993296720,1976993317840
 	
 	;Video::file6, Texture::file6
-	C: "OO",1975855655536,1975855664176
+	C: "OO",1976993317360,1976993303440
 	
 	;Video::file7, Texture::file7
-	C: "OO",1975855656016,1975855665136
+	C: "OO",1976993297200,1976993302960
 	
 	;Texture::file1, Material::m_boat_G_deck
-	C: "OP",1975855677616,1977083192528, "Maya|TEX_global_diffuse_cube"
+	C: "OP",1976993293360,1976352080352, "Maya|TEX_global_diffuse_cube"
 	
 	;Texture::file2, Material::m_boat_G_deck
-	C: "OP",1975855677136,1977083192528, "Maya|TEX_global_specular_cube"
+	C: "OP",1976993307760,1976352080352, "Maya|TEX_global_specular_cube"
 	
 	;Texture::file3, Material::m_boat_G_deck
-	C: "OP",1975855658416,1977083192528, "Maya|TEX_brdf_lut"
+	C: "OP",1976993317840,1976352080352, "Maya|TEX_brdf_lut"
 	
 	;Texture::file5, Material::m_boat_G_deck
-	C: "OP",1975855679536,1977083192528, "Maya|TEX_normal_map"
+	C: "OP",1976993322640,1976352080352, "Maya|TEX_normal_map"
 	
 	;Texture::file4, Material::m_boat_G_deck
-	C: "OP",1975855666576,1977083192528, "Maya|TEX_color_map"
+	C: "OP",1976993313520,1976352080352, "Maya|TEX_color_map"
 	
 	;Material::m_boat_G_deck, Implementation::m_boat_G_deck_Implementation
-	C: "OO",1977083192528,1976938919040
+	C: "OO",1976352080352,1976692121696
 	
-	;BindingTable::root 37, Implementation::m_boat_G_deck_Implementation
-	C: "OO",1976467232880,1976938919040
+	;BindingTable::root 51, Implementation::m_boat_G_deck_Implementation
+	C: "OO",1976226579776,1976692121696
 	
 	;Video::file4, Texture::file4
-	C: "OO",1975855684336,1975855666576
+	C: "OO",1976993318320,1976993313520
 	
 	;Video::file5, Texture::file5
-	C: "OO",1975855682416,1975855679536
+	C: "OO",1976993319280,1976993322640
 	
 	;Geometry::, Model::boat_G_bow
-	C: "OO",1976911403808,1976402320240
+	C: "OO",1976911501600,1976468096592
 	
 	;Material::m_boat_g_hull, Model::boat_G_bow
-	C: "OO",1977083190928,1976402320240
+	C: "OO",1976352082432,1976468096592
 	
 	;Material::m_boat_G_deck, Model::boat_G_bow
-	C: "OO",1977083192528,1976402320240
+	C: "OO",1976352080352,1976468096592
 	
 	;Model::boat_G_bow, DisplayLayer::hull_pieces
-	C: "OO",1976402320240,1976319873552
+	C: "OO",1976468096592,1976518846240
 }
