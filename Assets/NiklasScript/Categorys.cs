@@ -7,17 +7,18 @@ public class Categorys : MonoBehaviour
 
 	public GameObject CategoryTemplate;
 
-	public List<HullPieces> hullPieces = new List<HullPieces>();
+	public Categories Categories;
     void Start()
 	{
-		List<GameObject> objects = new List<GameObject>();
-		foreach (HullPieces hullPiece in hullPieces)
+		
+		foreach (RandomPieces pieces in Categories.Randoms)
 		{
-			objects.AddRange(hullPiece.Bows);
-			objects.AddRange(hullPiece.Centers);
-			objects.AddRange(hullPiece.Sterns);
-			SetCategorys(objects);
-			objects.Clear();
+			//List<GameObject> objects = new List<GameObject>();
+			//objects.AddRange(hullPiece.Bows);
+			//objects.AddRange(hullPiece.Centers);
+			//objects.AddRange(hullPiece.Sterns);
+			SetCategorys(pieces.Objects);
+			//objects.Clear();
         }
 		
     }
