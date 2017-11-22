@@ -7,23 +7,33 @@ public class Categorys : MonoBehaviour
 
 	public GameObject CategoryTemplate;
 
-	public List<GameObject> categorys = new List<GameObject>();
+	public List<HullPieces> hullPieces = new List<HullPieces>();
     void Start()
 	{
-		SetCategorys(categorys);
+		List<GameObject> objects = new List<GameObject>();
+		foreach (HullPieces hullPiece in hullPieces)
+		{
+			objects.AddRange(hullPiece.Bows);
+			objects.AddRange(hullPiece.Centers);
+			objects.AddRange(hullPiece.Sterns);
+			SetCategorys(objects);
+			objects.Clear();
+        }
+		
     }
 
 	public void SetCategorys(List<GameObject> categorys)
 	{
-		foreach (GameObject category in categorys)
-		{
-			var categoryObj = Instantiate(CategoryTemplate);
-			categoryObj.SetActive(true);
-            categoryObj.transform.parent = transform;
-			var categoryPart = categoryObj.GetComponent<CategoryPart>();
-			categoryPart.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(categoryPart.OnPointerClick);
-			categoryPart.SetAsset(category);
-			categoryPart.SetPieces(categorys);
-        }
+
+		var categoryObj = Instantiate(CategoryTemplate);
+		categoryObj.SetActive(true);
+        categoryObj.transform.parent = transform;
+		var categoryPart = categoryObj.GetComponent<CategoryPart>();
+		categoryPart.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(categoryPart.OnPointerClick);
+		categoryPart.SetAsset(categorys[0]);
+		List<GameObject> pieces = new List<GameObject>();
+		pieces.AddRange(categorys);
+        categoryPart.SetPieces(pieces);
+        
 	}
 }
