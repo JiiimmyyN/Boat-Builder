@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class CategoryPart : MonoBehaviour, IPointerClickHandler
+public class CategoryPart : MonoBehaviour
 {
-	public void OnPointerClick(PointerEventData pointerEventData)
+	public void OnPointerClick()
 	{
 		_customize.ActivateCollection(gameObject, Pieces);
     }

@@ -21,6 +21,7 @@ public class Categorys : MonoBehaviour
 			categoryObj.SetActive(true);
             categoryObj.transform.parent = transform;
 			var categoryPart = categoryObj.GetComponent<CategoryPart>();
+			categoryPart.GetComponent<UnityEngine.UI.Button>().onClick.AddListener(categoryPart.OnPointerClick);
 			categoryPart.SetAsset(category);
 			categoryPart.SetPieces(categorys);
         }
