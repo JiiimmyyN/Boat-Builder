@@ -6,26 +6,17 @@ using System.Linq;
 using UnityEditor;
 
 
-public class HullBuilder : MonoBehaviour
+public class HullBuilder 
 {
-	public HullPieces HullPieces;
 	private List<GameObject> _pieces = new List<GameObject>();
 
-	void Start ()
+	public void Reset()
 	{
-		CreateBase(HullPieces);
-	}
-	
-	void Update ()
-	{
-		if (Input.GetKeyDown(KeyCode.KeypadPlus))
+		foreach(var piece in _pieces)
 		{
-			AddCenterPiece(HullPieces.Centers[0]);
+			GameObject.Destroy(piece);
 		}
-		else if(Input.GetKeyDown(KeyCode.KeypadMinus) && _pieces.Count >= 3)
-		{
-			RemoveCenterPiece();
-		}
+		_pieces.Clear();
 	}
 
 	public void CreateBase(HullPieces pieces)
@@ -34,9 +25,9 @@ public class HullBuilder : MonoBehaviour
 		Assert.AreNotEqual(0, pieces.Centers.Count, "No centers!");
 		Assert.AreNotEqual(0, pieces.Sterns.Count, "No sterns!");
 
-		var bow = Instantiate(pieces.Bows[0]);
-		var center = Instantiate(pieces.Centers[0]);
-		var stern = Instantiate(pieces.Sterns[0]);
+		var bow = GameObject.Instantiate(pieces.Bows[0]);
+		var center = GameObject.Instantiate(pieces.Centers[0]);
+		var stern = GameObject.Instantiate(pieces.Sterns[0]);
 
 		_pieces.Add(bow);
 		_pieces.Add(center);
@@ -54,7 +45,7 @@ public class HullBuilder : MonoBehaviour
 
 		var prevLastCenter = _pieces[c - 2];
 		var stern =  _pieces[c - 1];
-		var newLastCenter = Instantiate(centerPiece);
+		var newLastCenter = GameObject.Instantiate(centerPiece);
 
 		Connect(prevLastCenter, newLastCenter);
 		Connect(newLastCenter, stern);
@@ -70,7 +61,7 @@ public class HullBuilder : MonoBehaviour
 
 		var toRemove = _pieces[c - 2];
 		_pieces.RemoveAt(c - 2);
-		Destroy(toRemove);
+		GameObject.Destroy(toRemove);
 
 		c = _pieces.Count;
 		var stern = _pieces[c - 1];
@@ -92,5 +83,4 @@ public class HullBuilder : MonoBehaviour
 
 		p2.transform.Translate(p1Back.transform.position - p2Front.transform.position);
 	}
-
 }
