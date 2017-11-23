@@ -71,8 +71,7 @@ public class HullTypes : MonoBehaviour
 
 
 				var img = btn.GetComponent<Image>();
-				var tex = UnityEditor.AssetPreview.GetAssetPreview(pp);
-				tex = RuntimePreviewGenerator.GenerateModelPreview(pp.transform, 256, 256);
+				var tex = RuntimePreviewGenerator.GenerateModelPreview(pp.transform, 256, 256);
 				img.sprite = Sprite.Create(tex, new Rect(0,0,tex.width,tex.height), Vector2.zero);
 			}
 			catch(Exception e)
