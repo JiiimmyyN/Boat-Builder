@@ -11,13 +11,19 @@ public class HullBuilder
 {
 	private List<GameObject> _pieces = new List<GameObject>();
 
-	public void Reset()
+
+	/// <summary>
+	/// Connect p1.Back with p2.Front
+	/// Only moves the p2 object while p1 stays stationary
+	/// </summary>
+	/// <param name="p1">GameObject with child object with atleast one Connector set as Back</param>
+	/// <param name="p2">GameObject with child object with atleast one Connector set as Front</param>
+	public void Connect(GameObject p1, GameObject p2)
 	{
-		foreach(var piece in _pieces)
-		{
-			GameObject.Destroy(piece);
-		}
-		_pieces.Clear();
+		var p1Back = p1.GetComponentsInChildren<Connector>().First(con => con.Pos == Connector.Position.Back);
+		var p2Front = p2.GetComponentsInChildren<Connector>().First(con => con.Pos == Connector.Position.Front);
+
+		p2.transform.Translate(p1Back.transform.position - p2Front.transform.position);
 	}
 
 	public void CreateBase(HullPieces pieces)
@@ -36,8 +42,20 @@ public class HullBuilder
 
 		Connect(bow, center);
 		Connect(center, stern);
-		
+
+		bow.AddComponent<MeshCollider>().sharedMesh = bow.GetComponent<MeshFilter>().mesh;
+		stern.AddComponent<MeshCollider>().sharedMesh = stern.GetComponent<MeshFilter>().mesh;
+
 		AddClickControlls(center);
+	}
+
+	public void Reset()
+	{
+		foreach(var piece in _pieces)
+		{
+			GameObject.Destroy(piece);
+		}
+		_pieces.Clear();
 	}
 
 	public void AddCenterPiece(GameObject centerPiece)
@@ -45,15 +63,14 @@ public class HullBuilder
 		Assert.IsTrue(_pieces.Count >= 2, "Too few hull pieces");
 
 		int c = _pieces.Count;
-
 		var prevLastCenter = _pieces[c - 2];
 		var stern =  _pieces[c - 1];
+
 		var newLastCenter = GameObject.Instantiate(centerPiece);
+		_pieces.Insert(c-1, newLastCenter);
 
 		Connect(prevLastCenter, newLastCenter);
 		Connect(newLastCenter, stern);
-
-		_pieces.Insert(c-1, newLastCenter);
 
 		AddClickControlls(newLastCenter);
 	}
@@ -67,7 +84,6 @@ public class HullBuilder
 		mark.Builder = this;
 		mark.OnClick = () =>
 		{
-			Debug.Log("OnClick");
 			if(_currentlyMarked != null)
 			{
 				_currentlyMarked.Toggle();
@@ -132,19 +148,8 @@ public class HullBuilder
 		}
 	}
 
-	/// <summary>
-	/// Connect p1.Back with p2.Front
-	/// Only moves the p2 object while p1 stays stationary
-	/// </summary>
-	/// <param name="p1">GameObject with child object with atleast one Connector set as Back</param>
-	/// <param name="p2">GameObject with child object with atleast one Connector set as Front</param>
-	public void Connect(GameObject p1, GameObject p2)
-	{
-		var p1Back = p1.GetComponentsInChildren<Connector>().First(con => con.Pos == Connector.Position.Back);
-		var p2Front = p2.GetComponentsInChildren<Connector>().First(con => con.Pos == Connector.Position.Front);
 
-		p2.transform.Translate(p1Back.transform.position - p2Front.transform.position);
-	}
+
 
 }
 

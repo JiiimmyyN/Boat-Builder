@@ -79,6 +79,16 @@ public class HullTypes : MonoBehaviour
 			}
 		}
 	}
+
+	void OnDisable()
+	{
+		var objs = GameObject.FindObjectsOfType<MarkObject>();
+		foreach (var obj in objs)
+		{
+			obj.enabled = false;
+		}
+
+	}
 }
 
 public class HullTypeButton : MonoBehaviour
