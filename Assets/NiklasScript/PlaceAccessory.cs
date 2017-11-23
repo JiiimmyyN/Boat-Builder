@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlaceAccessory : PlaceObject
 {
+	public static bool Holding;
 	public PlaceState CurrentState;
 	public enum PlaceState
 	{
@@ -23,18 +24,27 @@ public class PlaceAccessory : PlaceObject
 	}
 
 	// Update is called once per frame
+	private bool hitChilds(Transform[] trans, Transform hit)
+	{
+		for (int i = 0; i < trans.Length; i++)
+		{
+			if (trans[i] == hit)
+				return true;
+        }
+		return false;
+	}
 	void Update()
 	{
 		if (CurrentState == PlaceState.Placed)
 		{
-			if (Input.GetKeyDown(KeyCode.Mouse1))
+			if (Input.GetKeyDown(KeyCode.Mouse1) && !Holding)
 			{
 				RaycastHit hit2;
 				Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
-
+				var transforms = GetComponentsInChildren<Transform>();
 				if (Physics.Raycast(ray2, out hit2))
 				{
-					if (hit2.collider.gameObject == gameObject)
+					if (hit2.transform == transform || hitChilds(transforms, hit2.transform))
 					{
 
 						CurrentState = PlaceState.Placing;
@@ -47,11 +57,13 @@ public class PlaceAccessory : PlaceObject
 		
 		if (CurrentState == PlaceState.Placing)
 		{
+			Holding = true;
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			var transforms = GetComponentsInChildren<Transform>();
 			if (Physics.Raycast(ray, out hit))
 			{
-				if (hit.transform != transform)
+				if (hit.transform != transform || hitChilds(transforms, hit.transform))
 				{
 					transform.position = hit.point;
 					var proj = transform.forward - (Vector3.Dot(transform.forward, hit.normal)) * hit.normal;
@@ -73,26 +85,30 @@ public class PlaceAccessory : PlaceObject
 			if (Input.GetKeyUp(KeyCode.Mouse0))
 			{
 				ActivateMeshCollider();
-                CurrentState = PlaceState.Placed;
+				Holding = false;
+				CurrentState = PlaceState.Placed;
 			}
 		}
 	}
 	public void ActivateMeshCollider()
 	{
-		if (gameObject.GetComponent<MeshCollider>() == null)
+		var children = GetComponentsInChildren<MeshFilter>();
+		foreach (MeshFilter mf in children)
 		{
-			gameObject.AddComponent<MeshCollider>();
+			if (mf.gameObject.GetComponent<MeshCollider>() == null)
+				mf.gameObject.AddComponent<MeshCollider>();
+			else
+				mf.gameObject.GetComponent<MeshCollider>().enabled = true;
 		}
-		else
-		{
-			gameObject.GetComponent<MeshCollider>().enabled = true;
-        }
+
 	}
 	public void DeActivateMeshCollider()
 	{
-		if (gameObject.GetComponent<MeshCollider>() != null)
+		var children = GetComponentsInChildren<MeshFilter>();
+		foreach (MeshFilter mf in children)
 		{
-			gameObject.GetComponent<MeshCollider>().enabled = false;
+			if (mf.gameObject.GetComponent<MeshCollider>() != null)
+				mf.gameObject.GetComponent<MeshCollider>().enabled = false;
 		}
 	}
 }
