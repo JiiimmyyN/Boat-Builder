@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -35,6 +36,8 @@ public class HullBuilder
 
 		Connect(bow, center);
 		Connect(center, stern);
+		
+		AddClickControlls(center);
 	}
 
 	public void AddCenterPiece(GameObject centerPiece)
@@ -51,7 +54,49 @@ public class HullBuilder
 		Connect(newLastCenter, stern);
 
 		_pieces.Insert(c-1, newLastCenter);
+
+		AddClickControlls(newLastCenter);
 	}
+
+	private void AddClickControlls(GameObject go)
+	{
+		var rb = go.AddComponent<Rigidbody>();
+		rb.freezeRotation = true;
+		rb.isKinematic = true;
+		var mark = go.AddComponent<MarkObject>();
+		mark.Builder = this;
+		mark.OnClick = () =>
+		{
+			Debug.Log("OnClick");
+			if(_currentlyMarked != null)
+			{
+				_currentlyMarked.Toggle();
+			}
+
+			_currentlyMarked = mark;
+			var o = mark.GetComponent<cakeslice.Outline>();
+			if(o != null)
+			{
+				if(o.enabled)
+				{
+					o.enabled = false;
+					_currentlyMarked = null;
+				}
+				else
+				{
+					o.enabled = true;
+				}
+			}
+			else
+			{
+				_currentlyMarked.gameObject.AddComponent<cakeslice.Outline>();
+			}
+		};
+		go.AddComponent<MeshCollider>().sharedMesh = go.GetComponent<MeshFilter>().mesh;
+	}
+
+
+	private MarkObject _currentlyMarked;
 
 	public void RemoveCenterPiece()
 	{
@@ -70,6 +115,23 @@ public class HullBuilder
 		Connect(preStern, stern);
 	}
 
+	public void TryRemove(GameObject p)
+	{
+		int i = _pieces.IndexOf(p);
+		_pieces.RemoveAt(i);
+		GameObject.Destroy(p);
+
+		for(int j = i-1; j < _pieces.Count; j++)
+		{
+			if(!(j >= _pieces.Count-1))
+			{
+				var forward = _pieces[j];
+				var backward = _pieces[j + 1];
+				Connect(forward, backward);
+			}
+		}
+	}
+
 	/// <summary>
 	/// Connect p1.Back with p2.Front
 	/// Only moves the p2 object while p1 stays stationary
@@ -83,4 +145,6 @@ public class HullBuilder
 
 		p2.transform.Translate(p1Back.transform.position - p2Front.transform.position);
 	}
+
 }
+

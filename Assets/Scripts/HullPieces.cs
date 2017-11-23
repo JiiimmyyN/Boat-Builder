@@ -23,9 +23,3 @@ public class HullPieces : ScriptableObject
 
 }
 
-[Serializable]
-public struct CenterPiece
-{
-	public GameObject Object;
-	public Texture2D Texture;
-}
