@@ -37,7 +37,7 @@ public class CategoryPart : MonoBehaviour
 			{
 				image.sprite = null;
 
-				var texture = AssetPreview.GetAssetPreview(go);
+				var texture = RuntimePreviewGenerator.GenerateModelPreview(go.transform, 512, 512);
 				if (texture != null)
 				{
 					Rect rec = new Rect(0, 0, texture.width, texture.height);

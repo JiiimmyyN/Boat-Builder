@@ -26,15 +26,10 @@ public class Piece : MonoBehaviour, IPointerClickHandler
 			var image = GetComponent<Image>();
 			if (image != null)
 			{
-
-				var texture = AssetPreview.GetAssetPreview(go);
-				if (texture != null)
-				{
-					Rect rec = new Rect(0, 0, texture.width, texture.height);
-					var sprite = Sprite.Create(texture, rec, new Vector2(0, 0));
-					image.sprite = sprite;
-				}
-				
+				var texture = RuntimePreviewGenerator.GenerateModelPreview(go.transform, 512, 512);
+				Rect rec = new Rect(0, 0, texture.width, texture.height);
+				var sprite = Sprite.Create(texture, rec, new Vector2(0, 0));
+				image.sprite = sprite;
 			}
 		}
 		catch(Exception e)
