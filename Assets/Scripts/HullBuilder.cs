@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -6,26 +7,17 @@ using System.Linq;
 using UnityEditor;
 
 
-public class HullBuilder : MonoBehaviour
+public class HullBuilder 
 {
-	public HullPieces HullPieces;
 	private List<GameObject> _pieces = new List<GameObject>();
 
-	void Start ()
+	public void Reset()
 	{
-		CreateBase(HullPieces);
-	}
-	
-	void Update ()
-	{
-		if (Input.GetKeyDown(KeyCode.KeypadPlus))
+		foreach(var piece in _pieces)
 		{
-			AddCenterPiece(HullPieces.Centers[0]);
+			GameObject.Destroy(piece);
 		}
-		else if(Input.GetKeyDown(KeyCode.KeypadMinus) && _pieces.Count >= 3)
-		{
-			RemoveCenterPiece();
-		}
+		_pieces.Clear();
 	}
 
 	public void CreateBase(HullPieces pieces)
@@ -34,9 +26,9 @@ public class HullBuilder : MonoBehaviour
 		Assert.AreNotEqual(0, pieces.Centers.Count, "No centers!");
 		Assert.AreNotEqual(0, pieces.Sterns.Count, "No sterns!");
 
-		var bow = Instantiate(pieces.Bows[0]);
-		var center = Instantiate(pieces.Centers[0]);
-		var stern = Instantiate(pieces.Sterns[0]);
+		var bow = GameObject.Instantiate(pieces.Bows[0]);
+		var center = GameObject.Instantiate(pieces.Centers[0]);
+		var stern = GameObject.Instantiate(pieces.Sterns[0]);
 
 		_pieces.Add(bow);
 		_pieces.Add(center);
@@ -44,6 +36,8 @@ public class HullBuilder : MonoBehaviour
 
 		Connect(bow, center);
 		Connect(center, stern);
+		
+		AddClickControlls(center);
 	}
 
 	public void AddCenterPiece(GameObject centerPiece)
@@ -54,13 +48,55 @@ public class HullBuilder : MonoBehaviour
 
 		var prevLastCenter = _pieces[c - 2];
 		var stern =  _pieces[c - 1];
-		var newLastCenter = Instantiate(centerPiece);
+		var newLastCenter = GameObject.Instantiate(centerPiece);
 
 		Connect(prevLastCenter, newLastCenter);
 		Connect(newLastCenter, stern);
 
 		_pieces.Insert(c-1, newLastCenter);
+
+		AddClickControlls(newLastCenter);
 	}
+
+	private void AddClickControlls(GameObject go)
+	{
+		var rb = go.AddComponent<Rigidbody>();
+		rb.freezeRotation = true;
+		rb.isKinematic = true;
+		var mark = go.AddComponent<MarkObject>();
+		mark.Builder = this;
+		mark.OnClick = () =>
+		{
+			Debug.Log("OnClick");
+			if(_currentlyMarked != null)
+			{
+				_currentlyMarked.Toggle();
+			}
+
+			_currentlyMarked = mark;
+			var o = mark.GetComponent<cakeslice.Outline>();
+			if(o != null)
+			{
+				if(o.enabled)
+				{
+					o.enabled = false;
+					_currentlyMarked = null;
+				}
+				else
+				{
+					o.enabled = true;
+				}
+			}
+			else
+			{
+				_currentlyMarked.gameObject.AddComponent<cakeslice.Outline>();
+			}
+		};
+		go.AddComponent<MeshCollider>().sharedMesh = go.GetComponent<MeshFilter>().mesh;
+	}
+
+
+	private MarkObject _currentlyMarked;
 
 	public void RemoveCenterPiece()
 	{
@@ -70,13 +106,30 @@ public class HullBuilder : MonoBehaviour
 
 		var toRemove = _pieces[c - 2];
 		_pieces.RemoveAt(c - 2);
-		Destroy(toRemove);
+		GameObject.Destroy(toRemove);
 
 		c = _pieces.Count;
 		var stern = _pieces[c - 1];
 		var preStern = _pieces[c - 2];
 
 		Connect(preStern, stern);
+	}
+
+	public void TryRemove(GameObject p)
+	{
+		int i = _pieces.IndexOf(p);
+		_pieces.RemoveAt(i);
+		GameObject.Destroy(p);
+
+		for(int j = i-1; j < _pieces.Count; j++)
+		{
+			if(!(j >= _pieces.Count-1))
+			{
+				var forward = _pieces[j];
+				var backward = _pieces[j + 1];
+				Connect(forward, backward);
+			}
+		}
 	}
 
 	/// <summary>
@@ -94,3 +147,4 @@ public class HullBuilder : MonoBehaviour
 	}
 
 }
+
