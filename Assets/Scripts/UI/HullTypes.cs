@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HullTypes : MonoBehaviour
@@ -18,6 +19,7 @@ public class HullTypes : MonoBehaviour
 
 	void Start ()
 	{
+		SceneManager.LoadSceneAsync("boat_testscene", LoadSceneMode.Additive);
 		Assert.IsFalse(Hulls == null, "No hulls!");
 
 		_hb = new HullBuilder();
@@ -78,6 +80,16 @@ public class HullTypes : MonoBehaviour
 				Debug.LogException(e);
 			}
 		}
+	}
+
+	void OnDisable()
+	{
+		var objs = GameObject.FindObjectsOfType<MarkObject>();
+		foreach (var obj in objs)
+		{
+			obj.enabled = false;
+		}
+
 	}
 }
 

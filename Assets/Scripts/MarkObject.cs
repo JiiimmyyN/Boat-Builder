@@ -11,7 +11,7 @@ public class MarkObject : MonoBehaviour
 	void OnMouseDown()
 	{
 		Debug.Log("MouseDown");
-		if (OnClick != null)
+		if (OnClick != null && this.enabled)
 		{
 			OnClick();
 		}
@@ -31,5 +31,12 @@ public class MarkObject : MonoBehaviour
 		{
 			Builder.TryRemove(this.gameObject);
 		}
+	}
+
+	void OnDisable()
+	{
+		var o = GetComponent<cakeslice.Outline>();
+		if(o != null)
+			o.enabled = false;
 	}
 }
