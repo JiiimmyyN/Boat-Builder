@@ -12,9 +12,12 @@ public class Piece : MonoBehaviour, IPointerClickHandler
 
 	public void OnPointerClick(PointerEventData pointerEventData)
 	{
-		var item = Instantiate(Item);
-		item.AddComponent<PlaceAccessory>();
-    }
+		if (Item != null)
+		{
+			var item = Instantiate(Item);
+			item.AddComponent<PlaceAccessory>();
+		}
+	}
 	public void SetAsset(GameObject go)
 	{
 		try
