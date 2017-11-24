@@ -19,8 +19,8 @@ public class HullTypes : MonoBehaviour
 
 	void Start ()
 	{
-		SceneManager.LoadSceneAsync("boat_testscene", LoadSceneMode.Additive);
-		Assert.IsFalse(Hulls == null, "No hulls!");
+		//SceneManager.LoadSceneAsync("boat_testscene", LoadSceneMode.Additive);
+		//Assert.IsFalse(Hulls == null, "No hulls!");
 
 		_hb = new HullBuilder();
 

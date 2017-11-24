@@ -35,6 +35,19 @@ public class PlaceAccessory : PlaceObject
 	}
 	void Update()
 	{
+		if (Input.GetKeyDown(KeyCode.Mouse2) && !Holding)
+		{
+			RaycastHit hit2;
+			Ray ray2 = Camera.main.ScreenPointToRay(Input.mousePosition);
+			var transforms = GetComponentsInChildren<Transform>();
+			if (Physics.Raycast(ray2, out hit2))
+			{
+				if (hit2.transform == transform || hitChilds(transforms, hit2.transform))
+				{
+					Destroy(gameObject);
+				}
+			}
+		}
 		if (CurrentState == PlaceState.Placed)
 		{
 			if (Input.GetKeyDown(KeyCode.Mouse1) && !Holding)
